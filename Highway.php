@@ -7,9 +7,6 @@
             protected int $nbLane,
             protected int $maxSpeed
         ) {
-            $this->currentVehicles = $currentVehicles;
-            $this->nbLane = $nbLane;
-            $this->maxSpeed = $maxSpeed;
         }
         
         public function getCurrentVehicles(): array

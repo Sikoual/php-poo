@@ -10,13 +10,15 @@
     require_once 'ResidentialWay.php';
     require_once 'PedestrianWay.php';
     
-    $moto = new Bicycle('red', 4);
-    $camion = new Camion('red', 4, 200);
-    $skateboard = new Skateboard('blue', 1);
-    $bike = new Bicycle('black', 1);
+    $car = new Voiture('red', 4, "fuel");
+    $car->setParkBrake(true);
     
-    $pedestrian = new PedestrianWay();
-    $pedestrian->addVehicle($bike);
-    $pedestrian->addVehicle($skateboard);
-    var_dump($pedestrian);
+    try {
+        $car->start();
+    } catch (Error $e) {
+        $car->setParkBrake(false);
+    } finally {
+        echo 'Ma voiture roule comme un donut';
+    }
     
+    var_dump($car);

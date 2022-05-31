@@ -7,8 +7,6 @@
         
         public function __construct(protected string $color, protected int $nbSeats)
         {
-            $this->color = $color;
-            $this->nbSeats = $nbSeats;
         }
         
         public function forward(): string

@@ -8,14 +8,22 @@
         ];
         private int $energyLevel = 50;
         
-        public function __construct(protected string $color, protected int $nbSeats, protected string $energy)
-        {
+        public function __construct(
+            protected string $color,
+            protected int $nbSeats,
+            protected string $energy,
+            private bool $hasParkBrake = false,
+        ) {
             parent::__construct($color, $nbSeats);
             $this->setEnergy($energy);
         }
         
         public function start(): string
         {
+            if ($this->hasParkBrake) {
+                throw new Error("Enlevez le frein à main !");
+            }
+            
             if ($this->energyLevel > 0) {
                 $sentence = "Lets GOO!";
             } else {
@@ -45,5 +53,10 @@
         public function setEnergyLevel(int $energyLevel): void
         {
             $this->energyLevel = $energyLevel;
+        }
+        
+        public function setParkBrake(bool $hasParkBrake): void
+        {
+            $this->hasParkBrake = $hasParkBrake;
         }
     }

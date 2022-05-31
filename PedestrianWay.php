@@ -8,8 +8,6 @@
             protected int $maxSpeed = 10
         ) {
             parent::__construct($currentVehicles, $nbLane, $maxSpeed);
-            $this->nbLane = $nbLane;
-            $this->maxSpeed = $maxSpeed;
         }
         
         public function addVehicle($vehicle)
