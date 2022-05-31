@@ -1,6 +1,6 @@
 <?php
     
-    abstract class Vehicle
+    class Vehicle
     {
         protected int $currentSpeed;
         protected int $nbWheels;
