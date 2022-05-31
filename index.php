@@ -9,16 +9,25 @@
     require_once 'Skateboard.php';
     require_once 'ResidentialWay.php';
     require_once 'PedestrianWay.php';
+    require_once 'Bike.php';
+    require_once 'LightableInterface.php';
     
-    $car = new Voiture('red', 4, "fuel");
-    $car->setParkBrake(true);
+    $bike = new Bike('red', 1);
+    $car = new Voiture('blue', 5, 'electric', true);
+    $skateBoard = new Skateboard('black', 1);
     
+    
+    $bike->setCurrentSpeed(5);
     try {
-        $car->start();
-    } catch (Error $e) {
-        $car->setParkBrake(false);
-    } finally {
-        echo 'Ma voiture roule comme un donut';
+        echo $bike->switchOn();
+    } catch (Error $error) {
+        echo $error->getMessage();
     }
     
-    var_dump($car);
+    $bike->setCurrentSpeed(20);
+    try {
+        echo $bike->switchOn();
+    } catch (Error $error) {
+        echo $error->getMessage();
+    }
+ 
