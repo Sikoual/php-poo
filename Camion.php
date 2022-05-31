@@ -1,33 +1,40 @@
 <?php
-    class Camion extends Vehicle{
+    
+    class Camion extends Vehicle
+    {
         
         private int $currentCharge = 0;
         
         public function __construct(protected string $color, protected int $nbSeats, private int $capacityStockage)
         {
-            parent::__construct($color,$nbSeats);
+            parent::__construct($color, $nbSeats);
         }
-        public function getCurrentCharge():int
+        
+        public function getCurrentCharge(): int
         {
             return $this->currentCharge;
         }
-        public function setCurrentCharge(int $currentCharge):void
+        
+        public function setCurrentCharge(int $currentCharge): void
         {
             $this->currentCharge = $currentCharge;
         }
-        public function getCapacityStockage():int
+        
+        public function getCapacityStockage(): int
         {
             return $this->capacityStockage;
         }
-        public function setCapacityStockage($capacityStockage):void
+        
+        public function setCapacityStockage($capacityStockage): void
         {
             $this->capacityStockage = $capacityStockage;
         }
+        
         public function isFull(): string
         {
-            if($this->currentCharge != $this->capacityStockage){
+            if ($this->currentCharge != $this->capacityStockage) {
                 $sentence = "in filling";
-            }else{
+            } else {
                 $sentence = "full";
             }
             return $sentence;

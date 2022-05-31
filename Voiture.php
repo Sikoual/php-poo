@@ -3,14 +3,14 @@
     class Voiture extends Vehicle
     {
         public const ALLOWED_ENERGIES = [
-          'fuel',
-          'electric',
+            'fuel',
+            'electric',
         ];
         private int $energyLevel = 50;
         
-        public function __construct(protected string $color, protected int $nbSeats,protected string $energy)
+        public function __construct(protected string $color, protected int $nbSeats, protected string $energy)
         {
-            parent::__construct($color,$nbSeats);
+            parent::__construct($color, $nbSeats);
             $this->setEnergy($energy);
         }
         
@@ -31,7 +31,7 @@
         
         public function setEnergy(string $energy): Voiture
         {
-            if(in_array($energy, self::ALLOWED_ENERGIES)){
+            if (in_array($energy, self::ALLOWED_ENERGIES)) {
                 $this->energy = $energy;
             }
             return $this;
@@ -42,7 +42,7 @@
             return $this->energyLevel;
         }
         
-        public function setEnergyLevel(int $energyLevel):void
+        public function setEnergyLevel(int $energyLevel): void
         {
             $this->energyLevel = $energyLevel;
         }
