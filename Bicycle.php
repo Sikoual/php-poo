@@ -1,5 +1,5 @@
 <?php
-    
-    class Bicycle extends Vehicle
-    {
-    }
+
+class Bicycle extends Vehicle
+{
+}
