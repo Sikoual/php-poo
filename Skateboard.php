@@ -1,5 +1,5 @@
 <?php
-    
-    class Skateboard extends Vehicle
-    {
-    }
+
+class Skateboard extends Vehicle
+{
+}
