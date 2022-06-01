@@ -1,9 +1,9 @@
 <?php
-    
-    class ChargingStation
+
+class ChargingStation
+{
+    public function fullCharge(RechargeableInterface $vehicle)
     {
-        public function fullCharge(RechargeableInterface $vehicle)
-        {
-            $vehicle->charge(100);
-        }
+        $vehicle->charge(100);
     }
+}
