@@ -1,19 +1,17 @@
 <?php
-
-final class MotorWay extends Highway
-{
-    public function __construct(
-        protected array $currentVehicles = [],
-        protected int $nbLane = 4,
-        protected int $maxSpeed = 130
-    ) {
-        parent::__construct($currentVehicles, $nbLane, $maxSpeed);
-        $this->nbLane = $nbLane;
-        $this->maxSpeed = $maxSpeed;
-    }
-
-    public function addVehicle($vehicle): void
+    
+    final class MotorWay extends Highway
     {
-        $this->currentVehicles[] = $vehicle;
+        public function __construct(
+            protected array $currentVehicles = [],
+            protected int $nbLane = 4,
+            protected int $maxSpeed = 130
+        ) {
+            parent::__construct($currentVehicles, $nbLane, $maxSpeed);
+        }
+
+        public function addVehicle($vehicle): void
+        {
+            $this->currentVehicles[] = $vehicle;
+        }
     }
-}
