@@ -5,8 +5,8 @@ class Personne
     public function __construct(
         public string $lastName,
         public string $firstName,
-        public string $adress,
-        public DateTime $date,
+        public string $address,
+        public DateTime $birthDate,
     ) {
     }
 
@@ -25,38 +25,38 @@ class Personne
         return $this->firstName;
     }
 
-    public function setFirstName(string $firstName): string
+    public function setFirstName(string $firstName): void
     {
         $this->firstName = $firstName;
     }
 
-    public function getAdress(): string
+    public function getAddress(): string
     {
-        return $this->adress;
+        return $this->address;
     }
 
-    public function setAdress(string $adress): void
+    public function setAddress(string $address): void
     {
-        $this->adress = $adress;
+        $this->address = $address;
     }
 
-    public function birthDate(): string
+    public function getBirthDate(): string
     {
-        return $this->date->format('d/m/Y');
+        return $this->birthDate->format('d/m/Y');
     }
 
     public function displayInformation(): string
     {
         return 'La personne se nomme'." ".$this->firstName." "
-            .$this->lastName." ".'elle est née le'." ".$this->date->format(
+            .$this->lastName." ".'elle est née le'." ".$this->birthDate->format(
                 "d/m/y"
-            )." ".'et habite au'." ".$this->adress;
+            )." ".'et habite au'." ".$this->address;
     }
 
     public function ageNow(): string
     {
         $now = new DateTime('now');
-        $age = $now->diff($this->date);
+        $age = $now->diff($this->birthDate);
 
         return $age->format("%Y ans");
     }
